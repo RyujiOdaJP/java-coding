@@ -1,7 +1,21 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class Main {
     public static void main(String[] args) {
-        System.out.println(sum(5));
-        System.out.println(pairSumSequence(5));
+        //System.out.println(sum(5));
+        //System.out.println(pairSumSequence(5));
+
+        List<Integer> list1 = new ArrayList<>();
+        List<Integer> list2 = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list1.add(i);
+            list2.add(i * 2);
+        }
+
+        sumExecutionTime(list1, list2);
+        manipulateExecutionTime(list1, list2);
+
     }
 
     // O(N)の実行時間とO(N)のメモリ領域が必要
@@ -23,5 +37,36 @@ class Main {
     // コールスタック上に同時に存在することはないのでメモリはO(1)
     private static int pairSum(int num1, int num2) {
         return num1 + num2;
+    }
+
+    // 足すべきか掛けるべきか
+    private static void sumExecutionTime(List<Integer> list1, List<Integer> list2) {
+        // O(2N)
+        // 処理前の時刻を取得
+        long startTime = System.currentTimeMillis();
+
+        list1.forEach(item -> System.out.println(item.toString()));
+        list2.forEach(item -> System.out.println(item.toString()));
+        // 処理後の時刻を取得
+        long endTime = System.currentTimeMillis();
+
+        System.out.println("開始時刻：" + startTime + " ms");
+        System.out.println("終了時刻：" + endTime + " ms");
+        System.out.println("処理時間：" + (endTime - startTime) + " ms");
+    }
+
+    private static void manipulateExecutionTime(List<Integer> list1, List<Integer> list2) {
+        // O(N^2)
+        // 処理前の時刻を取得
+        long startTime = System.currentTimeMillis();
+        list1.forEach(item1 ->
+                list2.forEach(item2 -> System.out.println(item1.toString() + " " + item2.toString()))
+        );
+        // 処理後の時刻を取得
+        long endTime = System.currentTimeMillis();
+        System.out.println("開始時刻：" + startTime + " ms");
+        System.out.println("終了時刻：" + endTime + " ms");
+        System.out.println("処理時間：" + (endTime - startTime) + " ms");
+
     }
 }
