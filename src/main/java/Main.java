@@ -16,6 +16,11 @@ class Main {
         sumExecutionTime(list1, list2);
         manipulateExecutionTime(list1, list2);
 
+        long startTime = System.currentTimeMillis();
+        twoRecursionCalc(10);
+        long endTime = System.currentTimeMillis();
+        execTimePrint(startTime, endTime);
+
     }
 
     // O(N)の実行時間とO(N)のメモリ領域が必要
@@ -49,10 +54,7 @@ class Main {
         list2.forEach(item -> System.out.println(item.toString()));
         // 処理後の時刻を取得
         long endTime = System.currentTimeMillis();
-
-        System.out.println("開始時刻：" + startTime + " ms");
-        System.out.println("終了時刻：" + endTime + " ms");
-        System.out.println("処理時間：" + (endTime - startTime) + " ms");
+        execTimePrint(startTime, endTime);
     }
 
     private static void manipulateExecutionTime(List<Integer> list1, List<Integer> list2) {
@@ -64,9 +66,22 @@ class Main {
         );
         // 処理後の時刻を取得
         long endTime = System.currentTimeMillis();
+        execTimePrint(startTime, endTime);
+    }
+
+    private static int twoRecursionCalc(int n) {
+        // O(2^N)の計算。 O(N^2)ではない！！
+        long startTime = System.currentTimeMillis();
+
+        if (n <= 1) {
+            return 1;
+        }
+        return twoRecursionCalc(n - 1) + twoRecursionCalc(n - 1);
+    }
+
+    private static void execTimePrint(long startTime, long endTime) {
         System.out.println("開始時刻：" + startTime + " ms");
         System.out.println("終了時刻：" + endTime + " ms");
         System.out.println("処理時間：" + (endTime - startTime) + " ms");
-
     }
 }
