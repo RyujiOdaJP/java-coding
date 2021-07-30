@@ -79,6 +79,21 @@ class Main {
         return twoRecursionCalc(n - 1) + twoRecursionCalc(n - 1);
     }
 
+    // これはO(N)
+    private static void foo(int[] array) {
+        int sum = 0;
+        int product = 1;
+//        for (int i = 0; i < array.length; i++)と同じ
+        for (int j : array) {
+            sum += j;
+        }
+//        for (int i = 0; i < array.length; i++)と同じ
+        for (int j : array) {
+            product *= j;
+        }
+        System.out.println(sum + "," + product);
+    }
+
     private static void execTimePrint(long startTime, long endTime) {
         System.out.println("開始時刻：" + startTime + " ms");
         System.out.println("終了時刻：" + endTime + " ms");
