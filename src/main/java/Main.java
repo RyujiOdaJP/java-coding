@@ -8,7 +8,7 @@ class Main {
 
         List<Integer> list1 = new ArrayList<>();
         List<Integer> list2 = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 1; i <= 10; i++) {
             list1.add(i);
             list2.add(i * 2);
         }
@@ -20,6 +20,8 @@ class Main {
         twoRecursionCalc(10);
         long endTime = System.currentTimeMillis();
         execTimePrint(startTime, endTime);
+
+        foo(list1);
 
     }
 
@@ -80,9 +82,11 @@ class Main {
     }
 
     // これはO(N)
-    private static void foo(int[] array) {
+    private static void foo(List<Integer> array) {
         int sum = 0;
         int product = 1;
+
+        long startTime = System.currentTimeMillis();
 //        for (int i = 0; i < array.length; i++)と同じ
         for (int j : array) {
             sum += j;
@@ -91,12 +95,14 @@ class Main {
         for (int j : array) {
             product *= j;
         }
+        long endTime = System.currentTimeMillis();
         System.out.println(sum + "," + product);
+        execTimePrint(startTime, endTime);
     }
 
     private static void execTimePrint(long startTime, long endTime) {
         System.out.println("開始時刻：" + startTime + " ms");
         System.out.println("終了時刻：" + endTime + " ms");
-        System.out.println("処理時間：" + (endTime - startTime) + " ms");
+        System.out.println("処理時間：" + (endTime - startTime) + " m\n");
     }
 }
