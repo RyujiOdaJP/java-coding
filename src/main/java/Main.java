@@ -3,6 +3,10 @@ import java.util.List;
 
 class Main {
     public static void main(String[] args) {
+
+        IAutomatedStockTrader stockTrader = new VerySimpleStockTraderImpl();
+        stockTrader.executeTrades();
+
         //System.out.println(sum(5));
         //System.out.println(pairSumSequence(5));
 
