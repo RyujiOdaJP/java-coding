@@ -4,7 +4,14 @@ import java.util.List;
 class Main {
     public static void main(String[] args) {
 
-        IAutomatedStockTrader stockTrader = new VerySimpleStockTraderImpl();
+        IStockAnalysisService analysisService = new VerySimpleStockTraderImpl.StockAnalysisServiceImpl();
+        IOnlineBrokerageService brokerageService = new VerySimpleStockTraderImpl.NewYorkStockExchangeBrokerageServiceImpl();
+
+        IAutomatedStockTrader stockTrader = new VerySimpleStockTraderImpl(
+                analysisService,
+                brokerageService
+        );
+
         stockTrader.executeTrades();
 
         //System.out.println(sum(5));
