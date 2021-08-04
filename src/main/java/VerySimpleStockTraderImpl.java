@@ -6,9 +6,12 @@ public class VerySimpleStockTraderImpl implements IAutomatedStockTrader {
     private final IStockAnalysisService analysisService; //= new StockAnalysisServiceImpl();
     private final IOnlineBrokerageService brokerageService; //= new NewYorkStockExchangeBrokerageServiceImpl();
 
+    //    Interface Injection：
+    //    この方法では、インターフェース、つまり土台となるメソッド群を定義し、作成するクラスにそのインターフェースを批准させることで DIを実装します。
+    //    Java/ Kotlinでいうと interface、Objective-C/ Swiftでいうと protocol がインターフェースに該当すると思います。
     public VerySimpleStockTraderImpl(
-        IStockAnalysisService analysisService,
-        IOnlineBrokerageService brokerageService
+            IStockAnalysisService analysisService,
+            IOnlineBrokerageService brokerageService
     ) {
         this.analysisService = analysisService;
         this.brokerageService = brokerageService;
