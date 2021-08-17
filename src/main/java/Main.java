@@ -114,11 +114,20 @@ class Main {
     }
 
     // 平衡二分木
-    int sumBinary(TreeNode node) {
+    // N個Nodeがあれば深さはlogN 計算時間はO(2^log2N) -> O(N)
+    static int sumBinary(TreeNode node) {
         if(node == null) {
             return 0;
         }
         return sumBinary(node.left) + node.value + sumBinary(node.right);
+    }
+
+    // 素数かどうかの判断ロジック O(√N)
+    static boolean isPrime(int n) {
+        for (int x = 2; x * x <= n; x++) {
+            if (n % x == 0) return false;
+        }
+        return true;
     }
 
     private static void execTimePrint(long startTime, long endTime) {
