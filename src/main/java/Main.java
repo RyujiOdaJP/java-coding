@@ -1,3 +1,5 @@
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -109,6 +111,14 @@ class Main {
         long endTime = System.currentTimeMillis();
         System.out.println(sum + "," + product);
         execTimePrint(startTime, endTime);
+    }
+
+    // 平衡二分木
+    int sumBinary(TreeNode node) {
+        if(node == null) {
+            return 0;
+        }
+        return sumBinary(node.left) + node.value + sumBinary(node.right);
     }
 
     private static void execTimePrint(long startTime, long endTime) {
