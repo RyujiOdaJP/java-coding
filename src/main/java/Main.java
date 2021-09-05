@@ -6,6 +6,22 @@ import java.util.List;
 class Main {
     public static void main(String[] args) {
 
+        //Fruit fruit = new Fruit();
+        Melon melon = new Melon();
+        //generics test
+        // これはList型を上限付きワイルドカードで宣言すると、要素を追加することが出来ないことを意味します。
+        // List<? extends Fruit> basket = new ArrayList<Fruit>();
+        // Fruit fruit = basket.get(0); // ok
+        // basket.add(melon) //NG
+        // basket.add(fruit) //NG
+
+        // そこでもう一つの境界ワイルドカード型の出番です。
+        List<? super Fruit> basket = new ArrayList<Fruit>();
+        // Fruitのサブクラスは追加可能
+        basket.add(melon);
+        basket.add(new Lemon());
+
+
         IStockAnalysisService analysisService = new VerySimpleStockTraderImpl.StockAnalysisServiceImpl();
         IOnlineBrokerageService brokerageService = new VerySimpleStockTraderImpl.NewYorkStockExchangeBrokerageServiceImpl();
 
