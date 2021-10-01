@@ -1,5 +1,3 @@
-import algorithm.MaxValue;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,6 +9,24 @@ class Main {
         int val = maxValue.max();
         System.out.println("max num is: " + val);
 
+        //Fruit fruit = new Fruit();
+        Melon melon = new Melon();
+        //generics test
+        // これはList型を上限付きワイルドカードで宣言すると、要素を追加することが出来ないことを意味します。
+        // List<? extends Fruit> basket = new ArrayList<Fruit>();
+        // Fruit fruit = basket.get(0); // ok
+        // basket.add(melon) //NG
+        // basket.add(fruit) //NG
+
+        // そこでもう一つの境界ワイルドカード型の出番です。
+        List<? super Fruit> basket = new ArrayList<Fruit>();
+        // Fruitのサブクラスは追加可能
+        basket.add(melon);
+        basket.add(new Lemon());
+
+
+        IStockAnalysisService analysisService = new VerySimpleStockTraderImpl.StockAnalysisServiceImpl();
+        IOnlineBrokerageService brokerageService = new VerySimpleStockTraderImpl.NewYorkStockExchangeBrokerageServiceImpl();
 
 //        IStockAnalysisService analysisService = new VerySimpleStockTraderImpl.StockAnalysisServiceImpl();
 //        IOnlineBrokerageService brokerageService = new VerySimpleStockTraderImpl.NewYorkStockExchangeBrokerageServiceImpl();
@@ -117,6 +133,23 @@ class Main {
         long endTime = System.currentTimeMillis();
         System.out.println(sum + "," + product);
         execTimePrint(startTime, endTime);
+    }
+
+    // 平衡二分木
+    // N個Nodeがあれば深さはlogN 計算時間はO(2^log2N) -> O(N)
+    static int sumBinary(TreeNode node) {
+        if(node == null) {
+            return 0;
+        }
+        return sumBinary(node.left) + node.value + sumBinary(node.right);
+    }
+
+    // 素数かどうかの判断ロジック O(√N)
+    static boolean isPrime(int n) {
+        for (int x = 2; x * x <= n; x++) {
+            if (n % x == 0) return false;
+        }
+        return true;
     }
 
     private static void execTimePrint(long startTime, long endTime) {
