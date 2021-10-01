@@ -1,38 +1,46 @@
+import algorithm.MaxValue;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
+        System.out.println("put 3 numbers then returns you max num");
+        MaxValue maxValue = new MaxValue();
+        int val = maxValue.max();
+        System.out.println("max num is: " + val);
 
-        IStockAnalysisService analysisService = new VerySimpleStockTraderImpl.StockAnalysisServiceImpl();
-        IOnlineBrokerageService brokerageService = new VerySimpleStockTraderImpl.NewYorkStockExchangeBrokerageServiceImpl();
 
-        IAutomatedStockTrader stockTrader = new VerySimpleStockTraderImpl(
-                analysisService,
-                brokerageService
-        );
+//        IStockAnalysisService analysisService = new VerySimpleStockTraderImpl.StockAnalysisServiceImpl();
+//        IOnlineBrokerageService brokerageService = new VerySimpleStockTraderImpl.NewYorkStockExchangeBrokerageServiceImpl();
+//
+//        IAutomatedStockTrader stockTrader = new VerySimpleStockTraderImpl(
+//                analysisService,
+//                brokerageService
+//        );
 
-        stockTrader.executeTrades();
+//        stockTrader.executeTrades();
 
         //System.out.println(sum(5));
         //System.out.println(pairSumSequence(5));
 
-        List<Integer> list1 = new ArrayList<>();
-        List<Integer> list2 = new ArrayList<>();
-        for (int i = 1; i <= 10; i++) {
-            list1.add(i);
-            list2.add(i * 2);
-        }
+//        List<Integer> list1 = new ArrayList<>();
+//        List<Integer> list2 = new ArrayList<>();
+//        for (int i = 1; i <= 10; i++) {
+//            list1.add(i);
+//            list2.add(i * 2);
+//        }
 
-        sumExecutionTime(list1, list2);
-        manipulateExecutionTime(list1, list2);
+//        sumExecutionTime(list1, list2);
+//        manipulateExecutionTime(list1, list2);
 
-        long startTime = System.currentTimeMillis();
-        twoRecursionCalc(10);
-        long endTime = System.currentTimeMillis();
-        execTimePrint(startTime, endTime);
-
-        foo(list1);
+//        long startTime = System.currentTimeMillis();
+//        twoRecursionCalc(10);
+//        long endTime = System.currentTimeMillis();
+//        execTimePrint(startTime, endTime);
+//
+//        foo(list1);
 
     }
 
