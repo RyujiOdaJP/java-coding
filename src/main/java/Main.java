@@ -1,5 +1,3 @@
-import algorithm.CenterValue;
-import algorithm.JudgeInputValue;
 import algorithm.Sum;
 
 import java.util.ArrayList;
@@ -15,7 +13,8 @@ class Main {
 //        System.out.println("mid is: " + centerValue.mid());
 
         Sum sum = new Sum();
-        System.out.println("sum between num1 and num2 is: " + sum.sumBetweenArgs(1, 10));
+//        System.out.println("sum between num1 and num2 is: " + sum.sumBetweenArgs(1, 10));
+        sum.getTwoNumbersInput();
 
         //Fruit fruit = new Fruit();
         Melon melon = new Melon();
