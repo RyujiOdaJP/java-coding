@@ -1,3 +1,4 @@
+import algorithm.CenterValue;
 import algorithm.JudgeInputValue;
 
 import java.util.ArrayList;
@@ -7,7 +8,9 @@ class Main {
     public static void main(String[] args) {
         JudgeInputValue judgeInputValue = new JudgeInputValue();
 //        judgeInputValue.max4();
-        judgeInputValue.min4();
+//        judgeInputValue.min4();
+        CenterValue centerValue = new CenterValue();
+        System.out.println("mid is: " + centerValue.mid());
 
         //Fruit fruit = new Fruit();
         Melon melon = new Melon();
@@ -138,7 +141,7 @@ class Main {
     // 平衡二分木
     // N個Nodeがあれば深さはlogN 計算時間はO(2^log2N) -> O(N)
     static int sumBinary(TreeNode node) {
-        if(node == null) {
+        if (node == null) {
             return 0;
         }
         return sumBinary(node.left) + node.value + sumBinary(node.right);
