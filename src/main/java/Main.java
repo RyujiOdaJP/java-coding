@@ -1,13 +1,12 @@
+import algorithm.MaxValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        System.out.println("put 3 numbers then returns you max num");
         MaxValue maxValue = new MaxValue();
-        int val = maxValue.max();
-        System.out.println("max num is: " + val);
+        maxValue.max();
 
         //Fruit fruit = new Fruit();
         Melon melon = new Melon();

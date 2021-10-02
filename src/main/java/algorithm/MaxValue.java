@@ -4,11 +4,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MaxValue {
-    public int max() {
+    public void max() {
         Scanner stdIn = new Scanner(System.in);
-        int max = stdIn.nextInt();
-        if(max < stdIn.nextInt()) max = stdIn.nextInt();
-        if(max < stdIn.nextInt()) max = stdIn.nextInt();
-        return max;
+
+        System.out.println("put 3 numbers then returns you max num");
+        System.out.println("num a:"); int a = stdIn.nextInt();
+        System.out.println("num b:"); int b = stdIn.nextInt();
+        System.out.println("num c:"); int c = stdIn.nextInt();
+
+        int max = a;
+        if(max < b) max = b;
+        if(max < c) max = c;
+        System.out.println("max num is: " + max);
     }
 }
