@@ -1,12 +1,13 @@
-import algorithm.MaxValue;
+import algorithm.JudgeInputValue;
 
 import java.util.ArrayList;
 import java.util.List;
 
 class Main {
     public static void main(String[] args) {
-        MaxValue maxValue = new MaxValue();
-        maxValue.max4();
+        JudgeInputValue judgeInputValue = new JudgeInputValue();
+//        judgeInputValue.max4();
+        judgeInputValue.min4();
 
         //Fruit fruit = new Fruit();
         Melon melon = new Melon();
