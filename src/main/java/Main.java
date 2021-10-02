@@ -1,16 +1,21 @@
 import algorithm.CenterValue;
 import algorithm.JudgeInputValue;
+import algorithm.Sum;
 
 import java.util.ArrayList;
 import java.util.List;
 
 class Main {
     public static void main(String[] args) {
-        JudgeInputValue judgeInputValue = new JudgeInputValue();
+//        JudgeInputValue judgeInputValue = new JudgeInputValue();
 //        judgeInputValue.max4();
 //        judgeInputValue.min4();
-        CenterValue centerValue = new CenterValue();
-        System.out.println("mid is: " + centerValue.mid());
+
+//        CenterValue centerValue = new CenterValue();
+//        System.out.println("mid is: " + centerValue.mid());
+
+        Sum sum = new Sum();
+        System.out.println("sum between num1 and num2 is: " + sum.sumBetweenArgs(1, 10));
 
         //Fruit fruit = new Fruit();
         Melon melon = new Melon();
