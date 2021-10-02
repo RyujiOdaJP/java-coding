@@ -6,7 +6,7 @@ import java.util.List;
 class Main {
     public static void main(String[] args) {
         MaxValue maxValue = new MaxValue();
-        maxValue.max();
+        maxValue.max4();
 
         //Fruit fruit = new Fruit();
         Melon melon = new Melon();
