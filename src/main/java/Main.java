@@ -1,3 +1,4 @@
+import algorithm.Multiply;
 import algorithm.Sum;
 
 import java.util.ArrayList;
@@ -12,9 +13,12 @@ class Main {
 //        CenterValue centerValue = new CenterValue();
 //        System.out.println("mid is: " + centerValue.mid());
 
-        Sum sum = new Sum();
+//        Sum sum = new Sum();
 //        System.out.println("sum between num1 and num2 is: " + sum.sumBetweenArgs(1, 10));
-        sum.getTwoNumbersInput();
+//        sum.getTwoNumbersInput();
+
+        Multiply multiply = new Multiply();
+        multiply.out99Table();
 
         //Fruit fruit = new Fruit();
         Melon melon = new Melon();
