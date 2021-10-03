@@ -1,4 +1,5 @@
 import algorithm.Multiply;
+import algorithm.Sort;
 import algorithm.Sum;
 
 import java.util.ArrayList;
@@ -17,8 +18,12 @@ class Main {
 //        System.out.println("sum between num1 and num2 is: " + sum.sumBetweenArgs(1, 10));
 //        sum.getTwoNumbersInput();
 
-        Multiply multiply = new Multiply();
-        multiply.out99Table();
+//        Multiply multiply = new Multiply();
+//        multiply.out99Table();
+
+        Sort sort = new Sort();
+        sort.outReverseList();
+
 
         //Fruit fruit = new Fruit();
         Melon melon = new Melon();
